@@ -31,7 +31,7 @@
 ### Q5: What is the main advantage of a snowflake schema over a star schema?
 
 - A. Improved query performance
-- B. Reduced data redundancy and improved data integrity
+- B. Reduced data redundancy and improved data integrity (ANS)
 - C. Simpler schema structure
 - D. Better support for slowly changing dimensions
 
