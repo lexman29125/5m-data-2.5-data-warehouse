@@ -13,43 +13,67 @@ Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2
 This lesson introduces data warehouse, ingestion model and dimensional modeling. It also contains hands-on _Transform_ part of ELT (dimensional modeling) with `dbt` and `BigQuery`.
 
 A star schema is the simplest and most common way to organize data in a data warehouse. Think of it like a wheel with spokes:
-	•	At the center:
+
+ •	At the center:
+
 You have a Fact Table → big, fat table that stores the measures/metrics (e.g., sales amount, quantity, revenue) along with foreign keys pointing to dimensions.
+
 	•	Example columns: date_key, product_key, store_key, sales_amount
-	•	Around the edges (the “spokes”):
+
+ 	•	Around the edges (the “spokes”):
+
 You have Dimension Tables → descriptive attributes that give context to the facts.
-	•	Example: Product (name, category, brand), Store (location, region), Date (day, month, year).
+
+ 	•	Example: Product (name, category, brand), Store (location, region), Date (day, month, year).
 
 The schema looks like a ⭐ because the fact table is in the middle, and all dimension tables radiate out from it.
 
 Why use a star schema?
 
 ✅ Fast queries – fewer joins, because dimensions are denormalized.
+
 ✅ Easy to understand – business users love it; “sales by product by month” is straightforward.
+
 ✅ Optimized for OLAP (reporting, dashboards, slicing & dicing).
 
 Drawback
 
 ❌ More data redundancy (e.g., if every product row repeats brand info).
+
 ❌ Less storage-efficient compared to snowflake schema (where dimensions are normalized).
 
-👉 In short: Star schema = fact table in the middle, dimension tables around it. Simple, fast, business-friendly.
+In short: Star schema = fact table in the middle, dimension tables around it. Simple, fast, business-friendly.
 
 Example of Star Schema:
+
                    [Date Dimension]
+				   
                    (date_key, day, month, year)
+				   
                            |
+						   
                            |
+						   
 [Product Dimension] ---- [ Fact Table ] ---- [Store Dimension]
+
 (product_key, name,       (date_key,        (store_key, name,
+
  category, brand)          product_key,      city, region)
+ 
                            store_key,
+						   
                            sales_amount,
+						   
                            quantity)
+						   
                            |
+						   
                            |
+						   
                    [Customer Dimension]
+				   
                    (customer_key, name, segment, age)
+				   
 
 •	Fact Table (center): stores metrics like sales/revenue/quantity + foreign keys.
 •	Dimension Tables (around): give context to those metrics (time, product, store, customer, etc.).
@@ -80,8 +104,11 @@ Key differences vs. Star Schema:
 	•	Better data integrity, but can be slightly slower for queries.
 
 In short:
+
 	•	Star: denormalized, simpler, faster queries, more storage.
+
 	•	Snowflake: normalized, smaller storage, more complex queries.
+
 ---
 
 ## Part 1 - Data Warehouse and Dimensional Modeling
