@@ -12,9 +12,9 @@ Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2
 
 This lesson introduces data warehouse, ingestion model and dimensional modeling. It also contains hands-on _Transform_ part of ELT (dimensional modeling) with `dbt` and `BigQuery`.
 
-![ETL](./assets/dwh_etl.png
+![ETL](./assets/dwh_etl.png)
 
-![ELT](./assets/dwh_elt.png))
+![ELT](./assets/dwh_elt.png)
 
 A star schema is the simplest and most common way to organize data in a data warehouse. Think of it like a wheel with spokes:
 
