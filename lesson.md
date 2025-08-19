@@ -12,6 +12,10 @@ Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2
 
 This lesson introduces data warehouse, ingestion model and dimensional modeling. It also contains hands-on _Transform_ part of ELT (dimensional modeling) with `dbt` and `BigQuery`.
 
+![ETL](./assets/dwh_etl.png
+
+![ELT](./assets/dwh_elt.png))
+
 A star schema is the simplest and most common way to organize data in a data warehouse. Think of it like a wheel with spokes:
 
  •	At the center:
@@ -89,6 +93,8 @@ The source is defined and configured in `models/sources.yml`. It refers to the `
 
 A star schema with a `sales` fact table, a `store` dimension table and an incomplete `item` dimension table have been implemented. The `schema.yml` files define the schemas for the fact and dimension tables. They contain the name, description and tests for the primary keys of the tables.
 
+![Star Schema](./assets/star_schema.png)
+
 #### Snapshots
 
 A snapshot is a table that contains the current state of a source table. Snapshots enable "looking back in time" at previous data states in their mutable tables. While some source data systems are built in a way that makes accessing historical data possible, this is not always the case. Snapshots implement _type-2 Slowly Changing Dimensions_ over mutable source tables. These Slowly Changing Dimensions (or SCDs) identify how a row in a table changes over time.
@@ -160,6 +166,8 @@ For 2. and 3. below, the learner is advised to go through the liquor_sales DBT p
 #### Snowflake Schema (Extra)
 
 In a snowflake schema, each dimension can have one or more dimensions. For example, the `item` dimension table can be further normalized into `item`, `category` and `vendor` dimension tables. The `item` dimension table will contain the `category` and `vendor_number` as foreign keys.
+
+![Snowflake Schema](./assets/snowflake_schema.png)
 
 For the practices below, create a subdirectory under `models` called `snowflake`.
 
