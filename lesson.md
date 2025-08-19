@@ -12,7 +12,11 @@ Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2
 
 This lesson introduces data warehouse, ingestion model and dimensional modeling. It also contains hands-on _Transform_ part of ELT (dimensional modeling) with `dbt` and `BigQuery`.
 
+Extract-Load-Transform, often used in near real-time data transactions (OLTP):
+
 ![ETL](./assets/dwh_etl.png)
+
+Extract-Transform-Load, often used in data analytics (OLAP):
 
 ![ELT](./assets/dwh_elt.png)
 
