@@ -1,0 +1,48 @@
+[0m11:55:45.421863 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10564a260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063c4fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063c5780>]}
+
+
+============================== 11:55:45.424739 | f0aad01b-032a-4daf-bbb0-bc4cabcd3ac9 ==============================
+[0m11:55:45.424739 [info ] [MainThread]: Running with dbt=1.9.6
+[0m11:55:45.425113 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexfoo/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt init', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:55:45.432778 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object.. Dictionary: {'dir': PosixPath('/Users/alexfoo/.dbt')}
+[0m11:55:45.433015 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m11:56:42.334723 [error] [MainThread]: Encountered an error:
+
+[0m11:56:42.340966 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/dbt/cli/main.py", line 477, in init
+    results = task.run()
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "/Users/alexfoo/miniconda3/envs/elt/lib/python3.10/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m11:56:42.650932 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 57.283092, "process_in_blocks": "0", "process_kernel_time": 0.129919, "process_mem_max_rss": "125648896", "process_out_blocks": "0", "process_user_time": 1.584947}
+[0m11:56:42.652230 [debug] [MainThread]: Command `dbt init` failed at 11:56:42.652015 after 57.28 seconds
+[0m11:56:42.652951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10564a260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063c7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063e1270>]}
+[0m11:56:42.653822 [debug] [MainThread]: Flushing usage events
+[0m11:56:43.793562 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:59:35.146828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aadde0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e7c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e7460>]}
+
+
+============================== 11:59:35.149839 | 9a57fddf-2eec-42c6-abb4-a84713bf8562 ==============================
+[0m11:59:35.149839 [info ] [MainThread]: Running with dbt=1.9.6
+[0m11:59:35.150211 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/Users/alexfoo/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:59:35.150573 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/alexfoo/Documents/NTU_DSAI/5m-data-2.5-data-warehouse/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:59:35.152601 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.05695825, "process_in_blocks": "0", "process_kernel_time": 0.125326, "process_mem_max_rss": "126074880", "process_out_blocks": "0", "process_user_time": 1.578822}
+[0m11:59:35.152894 [debug] [MainThread]: Command `dbt run` failed at 11:59:35.152836 after 0.06 seconds
+[0m11:59:35.153118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aadde0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e7e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e7ee0>]}
+[0m11:59:35.153326 [debug] [MainThread]: Flushing usage events
+[0m11:59:36.275228 [debug] [MainThread]: An error was encountered while trying to flush usage events
