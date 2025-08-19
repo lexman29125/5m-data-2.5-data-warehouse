@@ -46,34 +46,7 @@ In short: Star schema = fact table in the middle, dimension tables around it. Si
 
 Example of Star Schema:
 
-                   [Date Dimension]
-				   
-                   (date_key, day, month, year)
-				   
-                           |
-						   
-                           |
-						   
-[Product Dimension] ---- [ Fact Table ] ---- [Store Dimension]
-
-(product_key, name,       (date_key,        (store_key, name,
-
- category, brand)          product_key,      city, region)
- 
-                           store_key,
-						   
-                           sales_amount,
-						   
-                           quantity)
-						   
-                           |
-						   
-                           |
-						   
-                   [Customer Dimension]
-				   
-                   (customer_key, name, segment, age)
-				   
+![Star Schema Example](./assets/Star_Schema1.png)				   
 
 •	Fact Table (center): stores metrics like sales/revenue/quantity + foreign keys.
 •	Dimension Tables (around): give context to those metrics (time, product, store, customer, etc.).
@@ -81,21 +54,8 @@ Example of Star Schema:
 That’s your “star” ⭐—fact in the middle, dimensions radiating out.
 
 Contrast to Snowflake Schema:
-                   [Date Dimension]
-                   (date_key, day, month, year)
-                           |
-                           |
-[Product Category]        [ Fact Table ] ---- [Store Dimension]
-(category_key, name)       (date_key,        (store_key, name,
-       |                   product_key,      city, region)
-       |                   store_key,
-[Product Dimension]         sales_amount,
-(product_key, name,         quantity)
- brand, category_key)
-                           |
-                           |
-                   [Customer Dimension]
-                   (customer_key, name, segment, age)
+
+![Snowflake Schema Example](./assets/Snowflake_Schema1.png)
 
 Key differences vs. Star Schema:
 	•	Normalized dimensions: e.g., Product dimension split into Product + Product Category.
