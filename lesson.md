@@ -118,7 +118,7 @@ Conceptual knowledge, refer to slides.
 
 ## Part 2 - Hands-on with dbt and BigQuery
 
-![Lesson Schema Design](./assets/liquor_sales_star_snowflake_schema.png)
+Before we begin, here's a resource that provides a simple overview of Introduction to DBT: https://medium.com/@suraj11nag/introduction-to-dbt-2f2ac93a3961
 
 ### Designing and Implementing Star Schema and Snowflake Schema for Liquor Sales Data
 
@@ -135,6 +135,10 @@ A star schema with a `sales` fact table, a `store` dimension table and an incomp
 A snapshot is a table that contains the current state of a source table. Snapshots enable "looking back in time" at previous data states in their mutable tables. While some source data systems are built in a way that makes accessing historical data possible, this is not always the case. Snapshots implement _type-2 Slowly Changing Dimensions_ over mutable source tables. These Slowly Changing Dimensions (or SCDs) identify how a row in a table changes over time.
 
 There is a snapshot for the `store` dimension table defined in `snapshots/store_snapshot.sql`.
+
+Here's a visual overview of what we are trying to achieve in this hands-on exercise. Extracting data from source, creating the store dimension table using a SCD2 snapshot + SQL and items table using SQL DDL. Entire process is executed via DBT based on the project structure, its configuration files and SQL scripts:
+
+![Lesson Schema Design](./assets/liquor_sales_star_snowflake_schema.png)
 
 #### Models
 
