@@ -184,6 +184,9 @@ Observe the test results. There should be 1 failing test for the `dim_item` tabl
 
 We will be using the `austin_bikeshare` dataset. This data contains the number of hires of bicycles from Austin Bikes. Data includes start and stop timestamps, station names and ride duration.
 
+Here's a visual flow of dbt:
+![dbt flow](./assets/dbt_austin_steps.png)
+
 It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sbigquery-public-data!2saustin_bikeshare).
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
